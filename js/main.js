@@ -7,9 +7,7 @@ const app = createApp ({
         }
     },
     methods: {
-        consoleLog() {
-            console.log('vue connected and working');
-        }
+        
     },
 });
 
