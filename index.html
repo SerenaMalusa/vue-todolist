@@ -65,7 +65,10 @@
 
                                     <li v-for="(task,i) in tasks" class="task-item">
                                         <div class="d-flex justify-content-between">
-                                            <p :class="textDecor = (task.done==true) ? 'text-decoration-line-through text-danger-emphasis' : ''" class="mb-1">{{task.text}}</p>
+                                            <p 
+                                                :class="textDecor = (task.done) ? 'text-decoration-line-through text-danger' : ''" 
+                                                class="mb-1"
+                                            >{{task.text}}</p>
                                             <div @click="removeTask(i)" class="task-x px-1">
                                                 <i class="bi bi-x-square-fill"></i>
                                             </div>
@@ -94,11 +97,21 @@
                                 <h2 class="pacifico">Aggiungi qualcosa di nuovo</h2>
 
                                 <!-- add new task form -->
-                                <form class="d-flex justify-content-center gap-2 p-3" action="#">
-                                    <input class="form-input col-10" type="text">
-                                    <button class="form-btn">
+                                <form class="d-flex justify-content-center gap-2 p-3 pb-0" action="#">
+                                    <div class="input-container text-start col-10">
+                                        <input 
+                                            v-model="newTask.text" 
+                                            :class="alert = (isInputEmpty) ? 'border-danger bg-danger bg-opacity-50' : ''" class="form-input col-10" 
+                                            type="text" 
+                                            required
+                                        >
+                                        <p v-if="message == 'done'">Task aggiunta correttamente!</p>
+                                        <p v-else-if="message == 'error'" class="text-danger">Inserisci qualcosa da fare</p>
+
+                                    </div>
+                                    <div @click="addNewTask()" class="form-btn">
                                         <i class="bi bi-floppy2-fill"></i>
-                                    </button>
+                                    </div>
                                 </form>
                                 <!-- end add new task form -->
 

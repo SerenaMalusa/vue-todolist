@@ -38,11 +38,16 @@
 .form-btn {
     border: 3px solid rgba(0, 0, 255, 0);
     border-radius: 2px;
-    padding: 0 8px;
+    padding: 0 6px;
+    height: 50%;
     background-color: azure;
     color: rgb(26, 133, 97);
 }
 
 .form-btn:hover {
     border: 3px solid rgb(21, 255, 0);
+}
+
+.form-input {
+    width: 100%;
 }

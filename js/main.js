@@ -27,13 +27,30 @@ const app = createApp ({
                 {
                     text: 'cosa da fare 6',
                     done: true
-                }
+                },
             ],
+            newTask: {
+                text: '',
+                done: false
+            },
+            isInputEmpty: false,
+            message: '',
         }
     },
     methods: {
         removeTask(index) {
             this.tasks.splice(index,1);
+        },
+        addNewTask() {
+            if (this.newTask.text == false) {
+                this.isInputEmpty = true;
+                this.message = 'error';
+                return;
+            }
+            this.tasks.push({...this.newTask});
+            this.newTask.text = '';
+            this.isInputEmpty = false;
+            this.message = 'done';
         },
     },
 });
