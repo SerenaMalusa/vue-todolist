@@ -63,6 +63,15 @@
                             <div class="tasks-container p-2 text-start">
                                  <ul class="tasks-list">
 
+                                    <li v-if="tasks.length == 0" class="task-item">
+                                        <div class="d-flex justify-content-between">
+                                            <p class="mb-1"> </p>
+                                            <div class="task-x px-1">
+                                                <i class="bi bi-x-square-fill"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+
                                     <li v-for="(task,i) in tasks" class="task-item">
                                         <div class="d-flex justify-content-between">
                                             <p  
@@ -98,7 +107,7 @@
                                 <h2 class="pacifico">Aggiungi qualcosa di nuovo</h2>
 
                                 <!-- add new task form -->
-                                <form class="d-flex justify-content-center gap-2 p-3 pb-0" action="#">
+                                <div class="d-flex justify-content-center gap-2 p-3 pb-0" action="#">
                                     <div class="input-container text-start col-10">
                                         <input 
                                             @keyUp.enter="addNewTask()"
@@ -113,7 +122,7 @@
                                     <div @click="addNewTask()" class="form-btn">
                                         <i class="bi bi-floppy2-fill"></i>
                                     </div>
-                                </form>
+                                </div>
                                 <!-- end add new task form -->
 
                             </div>
