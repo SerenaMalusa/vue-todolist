@@ -52,6 +52,9 @@ const app = createApp ({
             this.isInputEmpty = false;
             this.message = 'done';
         },
+        changeDone(task) {
+            task.done = !task.done;
+        },
     },
 });
 

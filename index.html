@@ -65,7 +65,8 @@
 
                                     <li v-for="(task,i) in tasks" class="task-item">
                                         <div class="d-flex justify-content-between">
-                                            <p 
+                                            <p  
+                                                @click="changeDone(task)"
                                                 :class="textDecor = (task.done) ? 'text-decoration-line-through text-danger' : ''" 
                                                 class="mb-1"
                                             >{{task.text}}</p>
