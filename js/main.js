@@ -55,6 +55,8 @@ const app = createApp ({
                 this.isInputEmpty = true;
                 // show the tag for the "error" message
                 this.message = 'error';
+                // cancel the message and reset input style after 30sec
+                this.cancelMessage();
                 // stop everything
                 return;
             }
@@ -67,6 +69,15 @@ const app = createApp ({
             this.isInputEmpty = false;
             // show the tag for the "done" message
             this.message = 'done';
+            // cancel the message after 30sec
+            this.cancelMessage();
+        },
+        // cancel the message and reset input style after 30sec
+        cancelMessage() {
+            setTimeout(() => {
+                this.isInputEmpty = false;
+                this.message = '';
+            }, 1000 * 30);
         },
         // function to change the status of a task on text click
         changeDone(task) {
