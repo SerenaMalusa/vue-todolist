@@ -33,7 +33,6 @@
 
 .task-x:hover {
     color: rgb(150, 17, 17);
-    cursor: pointer;
 }
 
 .form-btn {
@@ -47,6 +46,7 @@
 
 .form-btn:hover {
     border: 3px solid rgb(21, 255, 0);
+    cursor: pointer;
 }
 
 .form-input {
