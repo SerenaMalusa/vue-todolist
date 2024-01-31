@@ -6,7 +6,7 @@ const app = createApp ({
             tasks: [
                 {
                     text: 'cosa da fare 1',
-                    done: false
+                    done: true
                 },
                 {
                     text: 'cosa da fare 2',
@@ -22,11 +22,11 @@ const app = createApp ({
                 },
                 {
                     text: 'cosa da fare 5',
-                    done: false
+                    done: true
                 },
                 {
                     text: 'cosa da fare 6',
-                    done: false
+                    done: true
                 }
             ],
         }

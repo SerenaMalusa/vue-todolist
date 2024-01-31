@@ -65,7 +65,7 @@
 
                                     <li v-for="task in tasks" class="task-item">
                                         <div class="d-flex justify-content-between">
-                                            <p class="mb-1">{{task.text}}</p>
+                                            <p :class="textDecor = (task.done==true) ? 'text-decoration-line-through text-danger-emphasis' : ''" class="mb-1">{{task.text}}</p>
                                             <div class="task-x px-1">
                                                 <i class="bi bi-x-square-fill"></i>
                                             </div>
@@ -83,7 +83,7 @@
 
                                         </div>
                                     </li>-->
-                                    
+
                                  </ul>
                             </div>
                             <!-- end tasks container -->
